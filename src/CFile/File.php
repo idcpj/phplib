@@ -12,7 +12,7 @@
 		 * @internal param $orderid
 		 * @return bool
 		 */
-		public static function downloadFile($filePath, $outName){
+		public static function downloadFile($filePath, $outName=''){
 			ob_clean();
 
 			$ext = pathinfo($filePath,PATHINFO_EXTENSION);
