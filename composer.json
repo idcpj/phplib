@@ -16,7 +16,8 @@
     },
     "autoload": {
         "psr-0": {
-            "phpcpj\\phplib\\": "src/"
+            "CFile": "src/",
+            "CHttp": "src/"
         }
     }
 }
