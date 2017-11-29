@@ -36,7 +36,7 @@
 		 * @param $data
 		 * @return mixed
 		 */
-		public static function curl_post_ssl($url, $data){
+		public static function curlPostSsl($url, $data){
 			$tuCurl = curl_init();
 			curl_setopt($tuCurl, CURLOPT_URL, $url);
 			//curl_setopt($tuCurl, CURLOPT_PORT , 443);
