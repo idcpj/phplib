@@ -1,0 +1,19 @@
+{
+    "name": "phpcpj/phplib",
+    "description": "My php library",
+    "authors": [
+        {
+            "name": "idcpj",
+            "email": "260083304@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "CFile": "src/"
+        }
+    }
+}
