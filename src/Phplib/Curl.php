@@ -1,6 +1,6 @@
 <?php
 
-	namespace CHttp;
+	namespace Phplib;
 	class Curl{
 
 		/**

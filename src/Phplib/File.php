@@ -1,6 +1,6 @@
 <?php
 
-	namespace CFile;
+	namespace Phplib;
 
 	class File{
 
