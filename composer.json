@@ -16,8 +16,7 @@
     },
     "autoload": {
         "psr-0": {
-            "CFile": "src/",
-            "CHttp": "src/"
+            "phplib": "src/"
         }
     }
 }
