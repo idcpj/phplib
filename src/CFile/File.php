@@ -67,29 +67,6 @@
 			}
 		}
 
-		/**
-		 * @param $url
-		 * @return mixed
-		 */
-		function sendcurl($url){
-			//初始化curl
-			$ch = curl_init();
-			//设置超时
-			curl_setopt($ch, CURLOPT_TIMEOUT, 30);
-			curl_setopt($ch, CURLOPT_URL, $url);
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-			curl_setopt($ch, CURLOPT_HEADER, false);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			//运行curl，结果以jason形式返回
-			$res = curl_exec($ch);
-			curl_close($ch);
-			//取出openid
-			$data = json_decode($res, true);
-
-			return $data;
-		}
-
 
 
 	}
