@@ -1,6 +1,9 @@
 {
     "name": "phpcpj/phplib",
     "description": "My php library",
+    "keywords":     ["PHP", "library", "HTML", "JS", "Jquery"],
+    "homepage":     "https://github.com/idcpj/phplib",
+    "type":         "library",
     "authors": [
         {
             "name": "idcpj",
