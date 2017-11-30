@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+	<style type='text/css'>
+		#test{
+			border: 1px solid #edffd1;
+			float: left;
+			background-color: #CCCCCC;
+		}
+		.aside{
+			float: left;
+			margin:10px;
+		}
+		.aside>button{
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div class="aside">
+		<button id="changeC">加粗</button>
+		<button id="changeX">变细</button>
+		<button id="clear">清除</button>
+		<select name="" id="color">
+			<option value="red">红色</option>
+			<option value="blue">蓝色</option>
+			<option value="blank">黑色</option>
+		</select>
+		<p id="num">1</p>
+		</div>
+	<canvas id="test" width="500" height="400"></canvas>
+	
+	<script type="text/javascript">
+		var color="blue";
+		$('#color').change(function(){
+			color=$(this).val();
+			t.strokeStyle=color;
+		});
+
+		var c=document.getElementById('test');
+		var t=c.getContext('2d');
+		/*设置线条*/
+		t.lineWidth=5;
+		/*设置线颜色*/
+		t.strokeStyle=color;
+		/*判断是否开始绘画*/
+		var pp=false;
+		/*偏移*/
+		var n=1;
+
+		$("#test").mousedown(function(e){
+			pp=true;
+		});
+
+		$("#test").mouseup(function(e){
+			pp=false;
+		});
+		/*按下画图*/
+		$("#test").mousemove(function(e){
+			var mouseX=e.pageX-this.offsetLeft;
+			var mouseY=e.pageY-this.offsetTop;
+			if (pp) {
+				t.moveTo(mouseX,mouseY);
+				t.lineTo(mouseX+n,mouseY+n);
+				t.stroke();
+			}
+		});
+		/*加粗*/
+		$('#changeC').click(function(){
+			if (n<10) {
+				n+=2;
+			}
+			$("#num").html(n);
+		});
+
+		/*变细*/
+		$('#changeX').click(function(){
+			if(n>0){
+				n-=2;
+			}
+			$("#num").html("线框"+n);
+		});
+
+		/*清除画布*/
+		$("#clear").click(function(){
+			t.clearRect(0, 0, 250, 250);
+
+			t.setTransform(1, 0, 0, 1, 0, 0);
+
+		})
+		
+
+	</script>
+
+</body>
+</html>

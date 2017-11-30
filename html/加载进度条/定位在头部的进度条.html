@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位在头部的进度条</title>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript"></script>
+    <style>
+        .loading{
+            width:100%;
+            height:100%;
+            position: fixed;
+            top:0;
+            left:0;
+            z-index:100;
+            background: #ffffff;
+        }
+        .loading .pic{
+            width:0%; /*更改这个百分比,可以改变进度长度*/
+            height:1px;
+            position: absolute;
+            top:0;
+            left:0;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<div class="loading">
+    <div class="pic">
+    </div>
+</div>
+
+<img src="http://t1.niutuku.com/960/57/57-200417.jpg" alt="">
+<img src="http://h.hiphotos.baidu.com/zhidao/pic/item/060828381f30e9240ff2cd434c086e061d95f76a.jpg" alt="">
+<img src="http://imga.mumayi.com/android/img_google/2013/09/26/com.hd.live.wallpaper.beauty.anime/comhdlivewallpaperbeautyanime_litpic_2.jpg" alt="">
+<script>
+    $(".loading .pic").animate({width:"20%"},100);
+</script>
+<img src="http://c.hiphotos.baidu.com/zhidao/pic/item/d788d43f8794a4c22fe6ab9408f41bd5ac6e3943.jpg" alt="">
+<img src="http://b.hiphotos.baidu.com/zhidao/pic/item/1f178a82b9014a90e7eb9d17ac773912b21bee47.jpg" alt="">
+<img src="http://k.zol-img.com.cn/dcbbs/19875/a19874478_s.jpg" alt="">
+<script>
+    $(".loading .pic").animate({width:"10%"},100);
+</script>
+<img src="http://e.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=75aaa91fa444ad342eea8f83e59220c2/0bd162d9f2d3572cf556972e8f13632763d0c388.jpg" alt="">
+<img src="http://pic5.qiyipic.com/common/20130524/7dc5679567cd4243a0a41e5bf626ad77.jpg?src=focustat_4_20130527_7" alt="">
+<script>
+    $(".loading .pic").animate({width:"20%"},100);
+</script>
+<img src="http://www.bz55.com/uploads/allimg/120913/1-120913151Z6.jpg" alt="">
+<img src="http://attach.bbs.miui.com/forum/201207/27/141650kwxuc8oxc26dxdmw.jpg" alt="">
+<script>
+    $(".loading .pic").animate({width:"40%"},100);
+</script>
+<img src="http://att.x2.hiapk.com/forum/201312/10/180032vepsgivezfpmbjex.jpg" alt="">
+<script>
+    $(".loading .pic").animate({width:"60%"},100);
+</script>
+<img src="http://f.hiphotos.baidu.com/zhidao/pic/item/8b82b9014a90f60326b707453b12b31bb051eda9.jpg" alt="">
+<img src="http://c.hiphotos.baidu.com/zhidao/pic/item/0eb30f2442a7d9337afbe24aa94bd11373f001b3.jpg" alt="">
+<script>
+    $(".loading .pic").animate({width:"80%"},100);
+</script>
+<img src="http://img04.tooopen.com/images/20121026/tooopen_201210261227413300.jpg" alt="">
+<img src="http://h.hiphotos.baidu.com/zhidao/pic/item/c75c10385343fbf2f5078577b67eca8065388fbe.jpg" alt="">
+<script>
+    $(".loading .pic").animate({width:"90%"},100);
+</script>
+<img src="http://d.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=4ca3ac5c1930e924cff1943579384230/7c1ed21b0ef41bd5e6c559a057da81cb38db3dcb.jpg" alt="">
+<img src="http://k.zol-img.com.cn/dcbbs/19875/a19874478_s.jpg" alt="">
+<script>
+    $(".loading .pic").animate({width:"100%"},100,function () {
+        $(".loading").fadeOut();
+    })
+</script>
+</body>
+</html>

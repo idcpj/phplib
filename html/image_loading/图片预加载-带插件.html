@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片预加载</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+        html,body{
+            width:100%;
+        }
+        .box{
+            text-align: center;
+        }
+        a{
+            display: inline-block;
+            height:30px;
+            line-height:30px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            padding:0 10px;
+            margin-right: 50px;
+        }
+        a:hover{
+            background-color: #aaaaaa;
+        }
+        .loading{
+            position: fixed;
+            top:0;
+            left:0;
+            width: 100%;
+            height:100%;
+            text-align: center;
+            font-size: 30px;
+            background-color: #CCCCCC;
+        }
+        .progress{
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="https://pic.pimg.tw/nixojov/1466125488-1841874269_n.jpg?v=1466127109" alt="pic" id="img" style="max-width: 1000px">
+        <p>
+            <a href="javascript:;" class="btn" data-controller="prev">上一页</a>
+            <a href="javascript:;" class="btn" data-controller="next">下一页</a>
+        </p>
+    </div>
+    <div class="loading">
+        <p class="progress"></p>
+    </div>
+
+    </div>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+    <script type="text/javascript" src="load.js"></script>
+    <script>
+        var imgs=[
+            'https://pic.pimg.tw/nixojov/1466125488-1841874269_n.jpg?v=1466127109',
+            'http://img.article.pchome.net/00/44/23/20/pic_lib/wm/2.jpg',
+            'http://lcd.yesky.com/imagelist/2009/044/404q4y8g4m0p.jpg',
+            'http://lcd.yesky.com/imagelist/2009/044/cgro54wt2t2x.jpg'
+        ];
+        var index=0,
+            len=imgs.length,
+            progress=$('.progress');
+
+        //图片预加载
+        $.preload(imgs,{
+            //每加载完一张执行的方法
+            each:function(count){
+                progress.html(Math.round((count+1)/len * 100)+'%');
+            },
+            all:function(){
+                $('.loading').hide();
+                document.title=(index+1)+'/'+len;
+            }
+        });
+
+        //按钮
+        $('.btn').on('click',function(){
+           if ($(this).data('controller')=='prev'){//上一张
+                index=Math.max(0,--index);
+           }else{ //下一张
+               index=Math.min(len-1,++index);
+           }
+           console.log($(this).data('controller'));
+            document.title=(index+1)+'/'+len;
+           $('#img').attr('src',imgs[index]);
+        });
+    </script>
+</body>
+</html>

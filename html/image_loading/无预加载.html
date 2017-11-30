@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>不用图片预加载</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+        .box{
+            text-align: center;
+        }
+        a{
+            display: inline-block;
+            height:30px;
+            line-height:30px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            padding:0 10px;
+            margin-right: 50px;
+        }
+        a:hover{
+            background-color: #aaaaaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="https://pic.pimg.tw/nixojov/1466125488-1841874269_n.jpg?v=1466127109" alt="pic" id="img" style="max-width: 1000px">
+        <p>
+            <a href="javascript:;" class="btn" data-controller="prev">上一页</a>
+            <a href="javascript:;" class="btn" data-controller="next">下一页</a>
+        </p>
+    </div>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+    <script>
+        var imgs=[
+            'https://pic.pimg.tw/nixojov/1466125488-1841874269_n.jpg?v=1466127109',
+            'http://img.article.pchome.net/00/44/23/20/pic_lib/wm/2.jpg',
+            'http://lcd.yesky.com/imagelist/2009/044/404q4y8g4m0p.jpg',
+            'http://lcd.yesky.com/imagelist/2009/044/cgro54wt2t2x.jpg'
+        ];
+        var index=0,
+            len=imgs.length;
+
+        $('.btn').on('click',function(){
+           if ($(this).data('controller')=='prev'){//上一张
+                index=Math.max(0,--index);//取最大值
+           }else{ //下一张
+               index=Math.min(len-1,++index);//取最小值
+           }
+           console.log($(this).data('controller'));
+            document.title=(index+1)+'/'+len;
+           $('#img').attr('src',imgs[index]);
+        });
+    </script>
+</body>
+</html>
