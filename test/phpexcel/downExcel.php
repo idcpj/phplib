@@ -1,7 +1,6 @@
 <?php
 
-	require_once __DIR__ . '/../vendor/autoload.php';
-
+	require_once __DIR__ . '/../../vendor/autoload.php';
 
 	$xlsName = "User";
 	$xlsCell  = array(
@@ -32,4 +31,3 @@
 	} catch(Exception $e){
 		die($e->getMessage());
 	}
-

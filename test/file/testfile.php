@@ -1,17 +1,17 @@
 <?php
-	require_once __DIR__ . '/../vendor/autoload.php';
+	require_once __DIR__ . '/../../vendor/autoload.php';
 
 
 	/**
 	 * 文件下载demo  - 自定义输出名称
 	 */
-	\Phplib\File::downloadFile('file/01.png', '01');
+	\Phplib\File::downloadFile('res/01.png', '01');
 
 
 	/**
 	 * 文件下载demo  - 源文件名
 	 */
-	\Phplib\File::downloadFile('file/01.png');
+	\Phplib\File::downloadFile('res/01.png');
 
 
 	/**
