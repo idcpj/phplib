@@ -1,5 +1,7 @@
 <?php
-
+	/**
+	 * 添加附件的邮件
+	 */
 
 	require_once __DIR__ . '/../../vendor/autoload.php';
 

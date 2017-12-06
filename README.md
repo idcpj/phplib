@@ -5,18 +5,72 @@
 
 ## 文件目录介绍
 
+
 ### src - 类库存放文件
 
 **Curl.php**
 
-用`curl`进行双向认证的类
+1.用`curl`方法进行双向认证的类
 
 **File.php**
-`downloadFile`  下载本地或网络资源
 
-`createZip`     压缩文件
+`downloadFile`方法  下载本地或网络资源
 
+`createZip`方法     压缩文件
 
+`ftp`方法           用php上传文件到ftp服务器
+
+`sftp`方法         用php上传文件到stp服务器
+
+**Umeng.php**
+
+`sendAndroidList`方法  安卓列播放
+
+`sendIOSUnicast`方法    Ios单播
+
+`sendIOSList`方法         Ios列表
+
+**PHPExcel.php**
+
+`exportExcel` 方法        数组转excel  并下载 
+
+`excelConvertData` 方法    解析excel 第二个参数设置删除空白行数据
+
+**Pdf.php**
+
+>采用链式调用
+
+解决下载时,中文文件名无法识别的问题
+```markdown
+1、注释以下代码，大约在7565-7568行：
+
+if ($dest[0] != 'F') {
+	$name = preg_replace('/[\s]+/', '_', $name);
+	$name = preg_replace('/[^a-zA-Z0-9_\.-]/', '', $name);
+}
+
+2、搜索该方法代码，替换如下代码，大约分别在7639、7670、7693、7718行。
+	header('Content-Disposition: attachment; filename="'.basename($name).'"');
+	替换为
+	header('Content-Disposition: attachment; filename="'.$name.'"');
+
+```
+
+`setHeader`   设置页眉
+
+`htmlToPdf`   设置html转pdf
+
+`addImg`      添加图片
+
+`showPdf` / `downPdf`  / `savePdf`
+
+**Email.php**
+
+`__construct`  初始化配置
+
+`addAttach`    添加附件地址
+
+`sendEmail`    发送文件
 
 ### test
 测试类库文件,分别对应src中的类库

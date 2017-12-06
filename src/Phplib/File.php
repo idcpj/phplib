@@ -68,7 +68,7 @@
 		}
 
 		/**
-		 *ftp 用php 上传文件到服务器
+		 *ftp 用php上传文件到服务器
 		 * @param                $csv_filename     时间戳命名的txt文件
 		 * @param string $content txt文件内容
 		 * @param array          $config

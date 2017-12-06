@@ -10,10 +10,10 @@
 		/**
 		 * 此方法无需考虑有多少列字段和多少行数据,可自动判断
 		 * 导出为 xlsx 文件
-		 * @param string $xlsName 文件名
-		 * @param array  $expCellName 单元格对应字段名
-		 * @param array  $expTableData 三维数据
-		 * @param string $exTitle excel 表中 第一行标题
+		 * @param string $xlsName           文件名
+		 * @param array  $expCellName       单元格对应字段名
+		 * @param array  $expTableData      三维数据
+		 * @param string $exTitle excel     表中 第一行标题
 		 * @throws Exception
 		 */
 		public static function exportExcel($xlsName = '', $expCellName = array(), $expTableData = array(), $exTitle = ''){
@@ -65,7 +65,8 @@
 
 		/**
 		 * 把xml解析成数据
-		 * @param $file 文件路径
+		 * @param      $file        文件路径
+		 * @param bool $NotEmty     是否自动删除空白行
 		 * @return array
 		 */
 		public static function excelConvertData($file,$NotEmty=false){

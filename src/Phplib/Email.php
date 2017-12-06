@@ -14,7 +14,11 @@
 		private $email_port;  // 端口 网易25 如果使用QQ邮箱；需要把此项改为  465
 		private $phpmailer;
 
-
+		/**
+		 * 配置email参数
+		 * @param array $config
+		 * @throws Exception
+		 */
 		public function __construct($config=[]){
 			$this->email_smtp=$config['smtp'];
 			$this->email_username=$config['username'];

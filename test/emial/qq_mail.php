@@ -1,5 +1,7 @@
 <?php
-
+	/**
+	 * 为成功配置
+	 */
 
 	require_once __DIR__ . '/../../vendor/autoload.php';
 
