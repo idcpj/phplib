@@ -8,11 +8,11 @@
 
 ### src - 类库存放文件
 
-**Curl.php**
+>>**Curl.php**
 
 1.用`curl`方法进行双向认证的类
 
-**File.php**
+>**File.php**
 
 `downloadFile`方法  下载本地或网络资源
 
@@ -22,7 +22,7 @@
 
 `sftp`方法         用php上传文件到stp服务器
 
-**Umeng.php**
+>**Umeng.php**
 
 `sendAndroidList`方法  安卓列播放
 
@@ -30,18 +30,18 @@
 
 `sendIOSList`方法         Ios列表
 
-**PHPExcel.php**
+>**PHPExcel.php**
 
 `exportExcel` 方法        数组转excel  并下载 
 
 `excelConvertData` 方法    解析excel 第二个参数设置删除空白行数据
 
-**Pdf.php**
+>**Pdf.php**
 
->采用链式调用
+采用链式调用
 
-解决下载时,中文文件名无法识别的问题
-```markdown
+中文文件名无法识别的问题
+```php
 1、注释以下代码，大约在7565-7568行：
 
 if ($dest[0] != 'F') {
@@ -64,7 +64,7 @@ if ($dest[0] != 'F') {
 
 `showPdf` / `downPdf`  / `savePdf`
 
-**Email.php**
+>**Email.php**
 
 `__construct`  初始化配置
 
