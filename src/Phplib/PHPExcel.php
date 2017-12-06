@@ -68,7 +68,7 @@
 		 * @param $file 文件路径
 		 * @return array
 		 */
-		public static function excelConvertData($file){
+		public static function excelConvertData($file,$NotEmty=false){
 			// 判断文件是什么格式
 			$type = pathinfo($file);
 			$type = strtolower($type["extension"]);
@@ -82,7 +82,7 @@
 			// 取得总行数
 			$highestRow = $sheet->getHighestRow();
 			// 取得总列数
-			$highestColumn = $sheet->getHighestColumn();
+			$highestColumn = $sheet->getHighestDataColumn();
 
 			//循环读取excel文件,读取一条,插入一条
 			$data=array();
@@ -90,10 +90,13 @@
 			for($j=1;$j<=$highestRow;$j++){
 				//从A列读取数据
 				for($k='A';$k<=$highestColumn;$k++){
-					print_r($k);
-					print_r($highestColumn);
 					// 读取单元格
-					$data[$j][]=$objPHPExcel->getActiveSheet()->getCell("$k$j")->getValue();
+					$colData  =$objPHPExcel->getActiveSheet()->getCell("$k$j")->getValue();
+					//过滤为空
+					if($NotEmty && empty($colData)){
+						continue;
+					}
+					$data[$j][]=$colData;
 				}
 			}
 			return $data;
