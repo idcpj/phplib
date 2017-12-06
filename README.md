@@ -25,7 +25,6 @@
 
 `sftp`方法         用php上传文件到stp服务器
 
----
 
 **Umeng.php**
 ---
@@ -84,7 +83,6 @@ if ($dest[0] != 'F') {
 
 `sendEmail`    发送文件
 
----
 
 ### test
 测试类库文件,分别对应src中的类库
