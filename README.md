@@ -5,6 +5,12 @@
 
 ## 文件目录介绍
 
+### commom.php
+`encode`  解决json_encode中文不转义
+`createDir` 创建文件夹
+`arraySort` 二维数组根据某个字段排序
+
+
 
 ### src - 类库存放文件
 
@@ -76,12 +82,17 @@ if ($dest[0] != 'F') {
 **Email.php**
 ---
 
-
-`__construct`  初始化配置
-
 `addAttach`    添加附件地址
 
 `sendEmail`    发送文件
+
+**Alioss.php**
+---
+`ossUpload`     上传文件
+
+`getUrl`        获取完整网络连接
+
+`ossDeletObject`    删除oss上指定文件
 
 
 ### test
@@ -96,4 +107,3 @@ php 基础知识
 ## wiki
 php 环境配置等请前往wiki
 
-测试文字

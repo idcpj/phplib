@@ -1,6 +1,6 @@
 <?php
 
-	//中文不转义
+	//解决json_encode中文不转义
 	function encode($arr)
 	{
 		array_walk_recursive($arr, function(&$item, $key){
@@ -11,11 +11,10 @@
 	}
 
 	//创建文件夹
-	function create_dir($dirName, $recursive = 1,$mode=0777) {
+	function createDir($dirName, $recursive = 1,$mode=0777) {
 		! is_dir ( $dirName ) && mkdir ( $dirName,$mode,$recursive );
 	}
 
-	//多位数组进行排序
 
 	/**
 	 * 二维数组根据某个字段排序

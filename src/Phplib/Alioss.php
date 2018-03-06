@@ -5,6 +5,7 @@
 	use Exception;
 	use OSS\OssClient;
 
+
 	class Alioss{
 
 		private $keyId;
