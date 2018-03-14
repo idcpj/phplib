@@ -94,6 +94,17 @@ if ($dest[0] != 'F') {
 
 `ossDeletObject`    删除oss上指定文件
 
+**Md5Rsa**
+
+md5形式的rsa证书加密
+
+`_Sign`   对数据进行加密前的排序和  转为  `name=aaaaa&partner_id=2600833041` 形式
+
+`_CreateSign`  对数据进行加密
+
+`isValid`  对数据进行验证
+
+`sendAction`   为要加密的数据创建新的sign键名 `$data['sign']` 
 
 ### test
 测试类库文件,分别对应src中的类库
