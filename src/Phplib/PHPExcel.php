@@ -64,7 +64,7 @@
 		}
 
 		/**
-		 * 把xml解析成数据
+		 * 把excel解析成数据
 		 * @param      $file        文件路径
 		 * @param bool $NotEmty     是否自动删除空白行
 		 * @return array
